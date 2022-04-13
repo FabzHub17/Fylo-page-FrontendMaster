@@ -1,0 +1,44 @@
+@use '../abstracts' as a;
+
+.btn{
+
+    font-family: 'Raleway',sans-serif;
+    font-weight: 700;
+    color: var(--color-white);
+    border: none;
+    cursor:pointer;
+
+    &-primary{
+        background-color: var(--color-secondary-dark);
+        padding: 2rem 5rem;
+        border-radius: 50px;
+        width:60%;
+        font-size: 1.7rem;
+        transition: all .2s;
+
+        &:hover{
+            background-color: var(--color-secondary);
+        }
+
+
+        @include a.respond(tab-small){
+            width: 40%;
+        }
+
+        @include a.respond(tab-big){
+            width: 36%;
+        }
+
+        @include a.respond(desktop){
+            padding:1.5rem 3rem;
+            width: 30%;
+          }
+    }
+
+    &-text{
+        color: var(--color-secondary);
+        font-weight: 400;
+        border-bottom: 1px solid var(--color-secondary);
+        line-height: 2em;
+    }
+}

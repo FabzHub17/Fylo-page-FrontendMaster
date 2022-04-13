@@ -1,0 +1,56 @@
+@use "../abstracts" as a;
+
+.header {
+  background-color: var(--color-primary-light-1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8rem;
+
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+
+  @include a.respond(desktop) {
+    font-size: 1.5rem;
+  }
+
+}
+
+.nav {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 0 0 50%;
+
+  @include a.respond(tab-big) {
+    flex: 0 0 30%;
+  }
+
+  @include a.respond(desktop) {
+    flex: 0 0 25%;
+  }
+
+
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-white);
+    width: 100%;
+  }
+
+  &__item {
+    transition: all 0.2s;
+
+    &:hover {
+      border-bottom: 2px solid var(--color-secondary);
+      color: var(--color-secondary);
+      transform: translateY(-0.5rem) scale(1.1);
+    }
+  }
+
+  &__link {
+    color: inherit;
+  }
+}
